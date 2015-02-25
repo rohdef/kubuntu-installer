@@ -85,10 +85,14 @@ echo "Running full installer"
 echo "------------------------------------"
 
 if ! /usr/bin/ruby ./kubuntu-installer/apt_installer.rb; then
+  echo ""
+  echo ""
   echo "Installer failed"
   exit 1
 else
+  echo ""
+  echo ""
   echo "Installation successful.  Have a Bastard day :) "
-  exit 1
+  exit 0
 fi
 
