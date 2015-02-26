@@ -7,6 +7,13 @@ successes = 0
 failures = 0
 errors = []
 
+
+class AptInstaller
+  def initialize(apts)
+    @apts = apts
+  end
+end
+
 puts "Running apt installer"
 puts ""
 

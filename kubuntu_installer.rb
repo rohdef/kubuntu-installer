@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 require("json")
+require("./apt_installer")
 
 apt = Array.new()
 aptDirs = Dir['apt/*/']
@@ -10,8 +11,7 @@ aptDirs.each do |aptDir|
   puts aptDir
   file = File.read(aptDir + '/config.json')
   apt << JSON.parse(file)
+  apt['path'] = aptDir
 end
 
-apt.each do |apt|
-  puts "#{apt['package']}"
-end
+foo = new AptInstaller(apt)
