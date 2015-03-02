@@ -1,0 +1,5 @@
+{
+  "package": "openjdk-7-jdk",
+  "title": "OpenJDK Java Development Kit",
+  "categories": [] // Empty for now, no categories is yet defined
+}

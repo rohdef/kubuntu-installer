@@ -1,0 +1,5 @@
+{
+  "package": "htop",
+  "title": "Ncurses interface for top",
+  "categories": [] // Empty for now, no categories is yet defined
+}

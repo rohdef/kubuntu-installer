@@ -1,0 +1,5 @@
+{
+  "package": "emacs",
+  "title": "emacs editor",
+  "categories": [] // Empty for now, no categories is yet defined
+}

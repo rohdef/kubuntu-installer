@@ -1,0 +1,5 @@
+{
+  "package": "foo",
+  "title": "Very fooey foo",
+  "categories": [] // Empty for now, no categories is yet defined
+}
