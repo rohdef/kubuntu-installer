@@ -33,10 +33,10 @@ echo ""
 echo ""
 echo "------------------------------------"
 echo "Old data removed"
-echo "Installing git"
+echo "Installing git and libncursesw5-dev"
 echo "------------------------------------"
 
-if ! apt-get -qy install git; then
+if ! apt-get -qy install git libncursesw5-dev; then
   echo "Cannot install git, which is needed for the rest of the sources"
   exit 1
 fi
@@ -53,17 +53,17 @@ if ! apt-get -qy install ruby-ncurses > /dev/null; then
   exit 1
 fi
 
-echo ""
-echo ""
-echo "------------------------------------"
-echo "ruby-ncurses"
-echo "Cloning git repository with installer"
-echo "------------------------------------"
-
-if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
-  echo "Cannot clone git repoisitory with setup"
-  exit 1
-fi
+#echo ""
+#echo ""
+#echo "------------------------------------"
+#echo "ruby-ncurses"
+#echo "Cloning git repository with installer"
+#echo "------------------------------------"
+#
+#if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
+#  echo "Cannot clone git repoisitory with setup"
+#  exit 1
+#fi
 
 echo ""
 echo ""
@@ -80,7 +80,19 @@ fi
 echo ""
 echo ""
 echo "------------------------------------"
-echo "colorize installed"
+echo "Colorize installed"
+echo "Installing gem rndk"
+echo "------------------------------------"
+
+if ! gem install -q rndk; then
+  echo "Error when installing gem colorize"
+  exit 1
+fi
+
+echo ""
+echo ""
+echo "------------------------------------"
+echo "rndk installed"
 echo "Running full installer"
 echo "------------------------------------"
 
