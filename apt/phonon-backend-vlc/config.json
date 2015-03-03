@@ -1,0 +1,5 @@
+{
+  "package": "phonon-backend-vlc",
+  "title": "Phnon vlc backend",
+  "categories": [] // Empty for now, no categories is yet defined
+}

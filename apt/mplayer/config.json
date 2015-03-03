@@ -1,0 +1,5 @@
+{
+  "package": "mplayer",
+  "title": "Media player",
+  "categories": [] // Empty for now, no categories is yet defined
+}

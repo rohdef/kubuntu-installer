@@ -8,10 +8,11 @@ gemDirs = Dir['gem/*/']
 npmDirs = Dir['npm/*/']
 
 aptDirs.each do |aptDir|
-  puts aptDir
   file = File.read(aptDir + '/config.json')
-  apt << JSON.parse(file)
-  apt['path'] = aptDir
+  aptDetails = JSON.parse(file)
+  aptDetails['path'] = aptDir
+  apt << aptDetails
 end
 
-foo = new AptInstaller(apt)
+foo = AptInstaller.new(apt)
+foo.install()

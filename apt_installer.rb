@@ -2,7 +2,7 @@
 
 require 'colorize'
 
-aptPrograms = ["mc", "vim", "aptitude", "npm", "htop", "openjdk-7-jdk", "openssh-server", "mplayer", "skype", "google-chrome-beta", "google-talkplugin", "phonon-backend-vlc", "dosbox", "ruby-compass", "ruby-sass", "git"]
+#aptPrograms = "google-talkplugin", "phonon-backend-vlc"]
 
 class AptInstaller
   def initialize(apts)
@@ -23,15 +23,20 @@ class AptInstaller
 
   def install()
     total = 0
+    percent = 0.0
+    errors = []
+    successes = 0
+    failures = 0
+    
     print "Installing programs: 0%"
     @apts.each do |program|
       total += 1
-      percent = total.to_f/aptPrograms.length.to_f * 100
-      print "Installing programs: #{percent.round}%"
-      print "\r"
+      percent = total.to_f/@apts.length.to_f * 100
+      print "Installing programs: #{percent.round}%\n"
+      print "Installing #{program['title']}\n"
 
       begin
-        %x[apt-get -y install #{program}]
+        %x[apt-get -y install #{program['package']}]
         successes += 1
       rescue Exception => e
         errors.push("Installation failed for '#{program}', the message was: #{e.message}")

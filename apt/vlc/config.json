@@ -1,0 +1,5 @@
+{
+  "package": "vlc",
+  "title": "VideoLan Client - media player",
+  "categories": [] // Empty for now, no categories is yet defined
+}

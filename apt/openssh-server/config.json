@@ -1,0 +1,5 @@
+{
+  "package": "openssh-server",
+  "title": "SSH server",
+  "categories": [] // Empty for now, no categories is yet defined
+}

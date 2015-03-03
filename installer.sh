@@ -48,27 +48,39 @@ echo "git installed"
 echo "Installing ruby-ncurses"
 echo "------------------------------------"
 
-if ! apt-get -qy install ruby-ncurses > /dev/null; then
+if ! apt-get -qy install ruby-ncurses; then
   echo "Cannot install ruby-ncurses, which is needed by the script"
   exit 1
 fi
 
-#echo ""
-#echo ""
-#echo "------------------------------------"
-#echo "ruby-ncurses"
-#echo "Cloning git repository with installer"
-#echo "------------------------------------"
-#
-#if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
-#  echo "Cannot clone git repoisitory with setup"
-#  exit 1
-#fi
+echo ""
+echo ""
+echo "------------------------------------"
+echo "Ruby ncurses installed"
+echo "Installing ruby-dev"
+echo "------------------------------------"
+
+if ! apt-get -qy install ruby-dev; then
+  echo "Cannot install ruby-dev, which is needed by the script"
+  exit 1
+fi
 
 echo ""
 echo ""
 echo "------------------------------------"
-echo "Repository ready"
+echo "Ruby dev installed"
+echo "Installing Ruby-ffi"
+echo "------------------------------------"
+
+if ! apt-get -qy install ruby-ffi; then
+  echo "Cannot install ruby-ffi, which is needed by the script"
+  exit 1
+fi
+
+echo ""
+echo ""
+echo "------------------------------------"
+echo "ruby-ffi installed"
 echo "Installing gem colorize"
 echo "------------------------------------"
 
@@ -93,6 +105,18 @@ echo ""
 echo ""
 echo "------------------------------------"
 echo "rndk installed"
+echo "Cloning git repository with installer"
+echo "------------------------------------"
+
+if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
+  echo "Cannot clone git repoisitory with setup"
+  exit 1
+fi
+
+echo ""
+echo ""
+echo "------------------------------------"
+echo "Repo man has done his work"
 echo "Running full installer"
 echo "------------------------------------"
 
