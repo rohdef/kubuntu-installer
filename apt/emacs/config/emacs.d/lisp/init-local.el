@@ -16,5 +16,8 @@
 (setq auto-mode-alist
       (append '(("\\.h$" . c++-mode) ("\\.cpp$" . c++-mode) ("\\.ino$" . c++-mode)) auto-mode-alist))
 
+;; Coq
+(setq proof-three-window-mode-policy 'hybrid)
+
 (provide 'init-local)
 ;;; init-local.el ends here
