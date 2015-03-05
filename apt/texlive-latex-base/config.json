@@ -1,5 +1,5 @@
 {
-  "package": "npm",
-  "title": "Node package manager",
+  "package": "texlive-latex-base",
+  "title": "LaTeX tools",
   "categories": [] // Empty for now, no categories is yet defined
 }

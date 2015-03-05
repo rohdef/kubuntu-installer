@@ -1,0 +1,5 @@
+{
+  "package": "node",
+  "title": "Node package manager",
+  "categories": [] // Empty for now, no categories is yet defined
+}
