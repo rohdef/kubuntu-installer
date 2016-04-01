@@ -1,5 +1,5 @@
 {
-  "package": "google-chrome-beta",
-  "title": "Google Chrome (beta)",
+  "package": "insync",
+  "title": "Google Drive integration",
   "categories": [] // Empty for now, no categories is yet defined
 }

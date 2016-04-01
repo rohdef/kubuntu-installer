@@ -28,19 +28,51 @@ class AptInstaller
     successes = 0
     failures = 0
     
-    print "Installing programs: 0%"
+    print "Running prescripts: 0% \n"
+    @apts.each do |program|
+      total += 1
+      percent = total.to_f/@apts.length.to_f * 100
+      print "Running prescripts: #{percent.round}%\n"
+      print "Prescript for #{program['title']}\n"
+
+      if File.exist?("#{program['path']}prescript.rb")
+          out = %x[ruby #{program['path']}prescript.rb]
+          print(out)
+      end
+    end
+    
+    total = 0
+    percent = 0.0
+    
+    %x[apt-get update]
+    
     @apts.each do |program|
       total += 1
       percent = total.to_f/@apts.length.to_f * 100
       print "Installing programs: #{percent.round}%\n"
       print "Installing #{program['title']}\n"
-
+      
       begin
         %x[apt-get -y install #{program['package']}]
         successes += 1
       rescue Exception => e
         errors.push("Installation failed for '#{program}', the message was: #{e.message}")
         failures += 1
+      end
+    end
+    
+    total = 0
+    percent = 0.0
+    
+    @apts.each do |program|
+      total += 1
+      percent = total.to_f/@apts.length.to_f * 100
+      print "Running postscripts: #{percent.round}%\n"
+      print "Postscript for #{program['title']}\n"
+      
+      if File.exist?("#{program['path']}postcript.rb")
+          out = %x[ruby #{program['path']}postcript.rb]
+          print(out)
       end
     end
   end

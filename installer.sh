@@ -120,7 +120,7 @@ echo "Repo man has done his work"
 echo "Running full installer"
 echo "------------------------------------"
 
-if ! /usr/bin/ruby ./kubuntu-installer/apt_installer.rb; then
+if ! /usr/bin/ruby ./kubuntu-installer/kubuntu_installer.rb; then
   echo ""
   echo ""
   echo "Installer failed"
