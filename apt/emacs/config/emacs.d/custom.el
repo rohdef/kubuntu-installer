@@ -1,15 +1,14 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes nil)
- '(session-use-package t nil (session)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
+;;; Code:
+;; Normal settings
 (global-linum-mode 1)
+(desktop-save-mode 0)
+(setq display-time-24hr-format t)
+(display-time-mode 1)
+(setq-default show-trailing-whitespace nil)
+
+;; Full screen
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+;; No toolbars
+(tool-bar-mode -1)
