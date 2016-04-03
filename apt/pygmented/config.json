@@ -1,0 +1,5 @@
+{
+  "package": "python-pygments",
+  "title": "Python tool used for LaTeX code highlighting",
+  "categories": [] // Empty for now, no categories is yet defined
+}

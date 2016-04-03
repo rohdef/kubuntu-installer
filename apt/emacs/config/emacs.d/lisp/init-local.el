@@ -7,6 +7,7 @@
 (desktop-save-mode 0)
 (setq display-time-24hr-format t)
 (display-time-mode 1)
+(setq-default show-trailing-whitespace nil)
 
 ;; Full screen
 (custom-set-variables

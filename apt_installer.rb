@@ -51,7 +51,7 @@ class AptInstaller
       percent = total.to_f/@apts.length.to_f * 100
       print "Installing programs: #{percent.round}%\n"
       print "Installing #{program['title']}\n"
-
+      
       begin
         %x[apt-get -y install #{program['package']}]
         successes += 1
