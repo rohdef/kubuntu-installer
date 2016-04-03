@@ -1,0 +1,9 @@
+wget -qO - https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key \
+| sudo apt-key add -
+
+Edit /etc/apt/sources.list and add deb http://apt.insynchq.com/[DISTRIBUTION] [CODENAME] non-free contrib
+
+texlive-luatex
+texlive-extra-utils
+texlive-latex-extra
+biber

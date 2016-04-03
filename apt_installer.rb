@@ -2,8 +2,6 @@
 
 require 'colorize'
 
-#aptPrograms = "google-talkplugin", "phonon-backend-vlc"]
-
 class AptInstaller
   def initialize(apts)
     @apts = apts
@@ -27,8 +25,27 @@ class AptInstaller
     errors = []
     successes = 0
     failures = 0
+
+    print "Preconfiguring programs to install: 0%\n"
+    @apts.each do |program|
+      total += 1
+      percent = total.to_f/@apts.length.to_f * 100
+      print "Preconfiguring programs: #{percent.round}%\n"
+
+      if File.exist?(program['path'] + '/prescript.rb')
+        print "\tPreconfiguring #{program['title']}\n"
+        require "./" + program['path'] + '/prescript.rb'
+      end
+    end
+
+    self.prepare()
+
+    print "Preconfiguration done\n"
+    print "---------------------\n\n"
+
+    total = 0
     
-    print "Installing programs: 0%"
+    print "Installing programs: 0%\n"
     @apts.each do |program|
       total += 1
       percent = total.to_f/@apts.length.to_f * 100
@@ -43,6 +60,26 @@ class AptInstaller
         failures += 1
       end
     end
+
+    print "Installation done\n"
+    print "-----------------\n\n"
+
+    total = 0
+    
+    print "Postconfiguring programs to install: 0%\n"
+    @apts.each do |program|
+      total += 1
+      percent = total.to_f/@apts.length.to_f * 100
+      print "Postconfiguring programs: #{percent.round}%\n"
+
+      if File.exist?(program['path'] + '/postscript.rb')
+        print "\tPostconfiguring #{program['title']}\n"
+        require "./" + program['path'] + '/postscript.rb'
+      end
+    end
+
+    print "Postconfiguration done\n"
+    print "---------------------\n\n"
   end
 end
 

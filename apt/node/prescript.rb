@@ -1,3 +1,3 @@
 begin
-  %x[add-apt-repository ppa:chris-lea/node.js]
+  %x[add-apt-repository -y ppa:chris-lea/node.js]
 end

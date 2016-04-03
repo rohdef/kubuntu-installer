@@ -108,10 +108,10 @@ echo "rndk installed"
 echo "Cloning git repository with installer"
 echo "------------------------------------"
 
-if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
-  echo "Cannot clone git repoisitory with setup"
-  exit 1
-fi
+#if ! git clone -q https://github.com/rohdef/kubuntu-installer.git; then
+#  echo "Cannot clone git repoisitory with setup"
+#  exit 1
+#fi
 
 echo ""
 echo ""
@@ -120,7 +120,7 @@ echo "Repo man has done his work"
 echo "Running full installer"
 echo "------------------------------------"
 
-if ! /usr/bin/ruby ./kubuntu-installer/apt_installer.rb; then
+if ! /usr/bin/ruby ./kubuntu-installer/kubuntu_installer.rb; then
   echo ""
   echo ""
   echo "Installer failed"

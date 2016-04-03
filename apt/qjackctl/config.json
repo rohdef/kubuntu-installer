@@ -1,0 +1,5 @@
+{
+  "package": "qjackctl",
+  "title": "QT Jack Sound Server Controller",
+  "categories": [] // Empty for now, no categories is yet defined
+}
