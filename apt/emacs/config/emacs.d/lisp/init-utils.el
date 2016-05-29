@@ -1,4 +1,3 @@
-;;; Copyright (c) 2006-2014, Steve Purcell
 (if (fboundp 'with-eval-after-load)
     (defalias 'after-load 'with-eval-after-load)
   (defmacro after-load (feature &rest body)

@@ -4,7 +4,6 @@
 (require 'init-utils)
 (require 'init-elpa)
 
-
 (defun maybe-install-package(p)
        (unless (package-installed-p p)
 	 (package-refresh-contents)
@@ -13,10 +12,12 @@
 
 (maybe-install-package 'php-mode)
 
+(require 'init-global)
+
 (require 'init-arduino)
 (require 'init-auctex)
 (require 'init-auto-complete)
-(require 'init-php)
+(require 'init-web)
 (require 'init-windows)
 
 (when (file-exists-p custom-file)
