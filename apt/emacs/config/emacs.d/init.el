@@ -4,21 +4,25 @@
 (require 'init-utils)
 (require 'init-elpa)
 
-(defun maybe-install-package(p)
-       (unless (package-installed-p p)
-	 (package-refresh-contents)
-	 (package-install p)
-	 ))
-
-(maybe-install-package 'php-mode)
+(setq rf_indent_level 2)
+(setq rf_indent_by_tab nil)
 
 (require 'init-global)
 
 (require 'init-arduino)
 (require 'init-auctex)
 (require 'init-auto-complete)
+(require 'init-git)
+;(require 'init-ssh)
 (require 'init-web)
 (require 'init-windows)
 
 (when (file-exists-p custom-file)
   (load custom-file))
+
+(add-hook 'git-commit-mode-hook
+          '(lambda () (auto-fill-mode 0))
+          ;; append rather than prepend to git-commit-mode-hook, since the
+          ;; thing that turns auto-fill-mode on in the first place is itself
+          ;; another hook on git-commit-mode.
+          t)

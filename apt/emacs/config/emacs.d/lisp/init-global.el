@@ -5,6 +5,7 @@
 (setq display-time-24hr-format t)
 (display-time-mode 1)
 (setq-default show-trailing-whitespace nil)
+(setq-default indent-tabs-mode nil)
 
 ;; Full screen
 (custom-set-variables
@@ -26,5 +27,17 @@
 
 ;; Delete selection when typing
 (delete-selection-mode 1)
+
+;; Set indentation
+(if (not rf_indent_by_tab)
+    (setq tab-width (* 4 rf_indent_level)))
+
+;;
+(custom-set-variables
+ '(custom-enabled-themes '(deeper-blue))
+ '(initial-frame-alist '((fullscreen . maximized)))
+ '(c-basic-offset rf_indent_level)
+ '(indent-tabs-mode rf_indent_by_tab)
+ )
 
 (provide 'init-global)
