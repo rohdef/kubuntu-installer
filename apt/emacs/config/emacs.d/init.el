@@ -1,3 +1,5 @@
+(package-initialize)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
@@ -9,10 +11,14 @@
 
 (require 'init-global)
 
-(require 'init-arduino)
-(require 'init-auctex)
+;(require 'init-arduino)
+;(require 'init-auctex)
 (require 'init-auto-complete)
+(require 'init-feature)
+(require 'init-flyspell)
 (require 'init-git)
+(require 'init-org-mode)
+;(require 'init-php)
 ;(require 'init-ssh)
 (require 'init-web)
 (require 'init-windows)

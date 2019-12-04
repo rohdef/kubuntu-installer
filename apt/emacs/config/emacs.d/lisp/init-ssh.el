@@ -1,3 +1,6 @@
+;;; Code:
+(maybe-require-package 'ssh)
+
 (require 'ssh)
 
 (add-hook 'ssh-mode-hook

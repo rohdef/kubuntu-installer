@@ -31,13 +31,17 @@
 ;; Set indentation
 (if (not rf_indent_by_tab)
     (setq tab-width (* 4 rf_indent_level)))
+(custom-set-variables
+ '(c-basic-offset rf_indent_level)
+ '(indent-tabs-mode rf_indent_by_tab))
 
-;;
+;; Disable welcome screen
+(custom-set-variables
+ '(inhibit-startup-screen t))
+
+;; Fix ui
 (custom-set-variables
  '(custom-enabled-themes '(deeper-blue))
- '(initial-frame-alist '((fullscreen . maximized)))
- '(c-basic-offset rf_indent_level)
- '(indent-tabs-mode rf_indent_by_tab)
- )
+ '(initial-frame-alist '((fullscreen . maximized))))
 
 (provide 'init-global)
