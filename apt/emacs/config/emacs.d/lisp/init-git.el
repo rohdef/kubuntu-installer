@@ -11,5 +11,6 @@
 ;(add-hook 'buffer-list-update-hook #'my-enable-smerge-maybe)
 
 (setq smerge-command-prefix (kbd "C-c v"))
+(setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 
 (provide 'init-git)
