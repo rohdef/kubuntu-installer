@@ -6,6 +6,7 @@
 (display-time-mode 1)
 (setq-default show-trailing-whitespace nil)
 (setq-default indent-tabs-mode nil)
+(add-to-list 'global-mode-string '(" %i - "))
 
 ;; Full screen
 (custom-set-variables
@@ -24,6 +25,7 @@
 
 ;; autocomplete paired brackets
 (electric-pair-mode 1)
+(add-hook 'org-mode-hook (lambda () (electric-pair-mode -1)))
 
 ;; Delete selection when typing
 (delete-selection-mode 1)
